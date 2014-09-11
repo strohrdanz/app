@@ -1,12 +1,12 @@
 $(function(){
 
-// $('#col3').hide();
-$('#col1').hide();
+$('#results').hide();
+$('#recipe').hide();
+// $('#searchform').hide();
+// $('#suggestions').hide();
 $('#back').hide();
 
-
 $('input').first().focus();            
-
 
 	$('table').on("click",".add", function() {
 
@@ -39,21 +39,32 @@ $('input').first().focus();
 	});
 
 	$('button').on("click", function(){
-		$('#col2').fadeIn();
+    $('#suggestions').hide();
+    $('#results').fadeIn();
 	});
 
-	$('.result').on("click", function(){
-		$('#col1').hide();
-		$('#col2').css("width","45%");
-		$('#col3').fadeIn();
-		$('#back').fadeIn();
+	$('#results .result').on("click", function(){
+    $(this).addClass("green");
+    $('#searchform').hide();
+    $('#results').addClass("small");
+    $('#recipe').fadeIn();
+    $('#back').fadeIn();
 	});
+
+  $('#suggestions .result').on("click", function(){
+    $('#searchform').hide();
+    $('#suggestions').addClass("small");
+    $('#recipe').fadeIn();
+    $('#back').fadeIn();
+  });
 
 	$('#back').on("click", function(){
-		$('#col1').fadeIn();
-		$('#col2').css("width","57%");
-		$('#col3').hide();
-		$('#back').fadeOut();
+    $(".result").removeClass("green");
+    $('#results').hide();
+    $('#recipe').hide();
+    $('#searchform').fadeIn();
+    $('#suggestions').fadeIn();
+    $('#results').removeClass("small");
+    $('#suggestions').removeClass("small");
 	});
-
 });

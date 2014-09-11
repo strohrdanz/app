@@ -48,20 +48,32 @@ a {
   color: #f3f2db;
   font-size: .9em; }
 
-#col1 {
-  width: 30%;
+#searchform {
+  width: 25%;
   float: left;
-  padding: 2% 4%;
+  padding: 2% 7%;
   height: 702px; }
 
-#col2 {
-  width: 45%;
+#suggestions {
+  width: 57%;
   float: left;
   min-height: 500px;
   padding: 2%; }
 
-#col3 {
-  width: 48%;
+#suggestions p:first-of-type {
+  font-style: italic; }
+
+#results {
+  width: 57%;
+  margin: 20px 0 0 0;
+  float: left; }
+
+#results.small, #suggestions.small {
+  width: 40%; }
+
+#recipe {
+  width: 50%;
+  margin: 0 0 0 3%;
   float: left; }
 
 .clearfix:before,
@@ -92,11 +104,14 @@ input {
   font-size: 1em; }
 
 #search {
-  width: 260px; }
+  width: 100%; }
 
 .add, .remove {
   background: #3a3f1c;
   width: 40px; }
+
+table {
+  width: 100%; }
 
 td {
   height: 40px;
@@ -119,7 +134,8 @@ p {
 button {
   width: 60px;
   height: 40px;
-  margin: 40px 0 0 199px;
+  float: right;
+  margin: 40px 2px 0 0;
   background: #ef4747;
   border: none;
   cursor: pointer;
